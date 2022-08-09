@@ -1,8 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Angel Prieto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <script
+      src="https://kit.fontawesome.com/1c3b2e895a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tippy.js@6/animations/scale.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tippy.js@6/animations/scale.css"
+    />
     <style>
-                * {
+                /* * {
       	border: 0;
       	box-sizing: border-box;
       	margin: 0;
@@ -23,7 +45,7 @@
       	height: 100vh;
       	display: grid;
       	place-items: center;
-      }
+      } */
 
       .progress-skills {
       	display: grid;
@@ -142,8 +164,347 @@
       	}
       }
     </style>
+    <style>
+            .flexslider {
+      		width: 790px;
+      		margin: 0 auto;
+      		box-shadow: none;
+      }
+
+      .flexslider li {
+      		position: relative;
+      }
+
+      .flexslider li .meta {
+      		position: absolute;
+      		bottom: 20px;
+      		left: 20px;
+      		color: white;
+      		display: flex;
+      		flex-direction: column;
+      		justify-content: flex-start;
+      		align-items: flex-start;
+      		font-family: 'Roboto', sans-serif;
+      }
+
+      .flexslider li h1 {
+      		background: rgba(51, 51, 51, 0.5);
+      		padding: 12px 18px 12px;
+      		margin-bottom: 0;
+      		font-size: 1.8em;
+      		font-weight: 300;
+      }
+
+      .flexslider li h2 {
+      		background: rgba(51, 51, 51, 0.5);
+      		padding: 13px 18px 11px;
+      		font-size: 1.1em;
+      		margin-bottom: 0;
+      		font-weight: 300;
+      }
+
+      .flexslider li .category {
+      		display: flex;
+      		flex-direction: row;
+      }
+
+      .flexslider li .category p {
+      		background: #e43837;
+      		margin-right: 7px;
+      		font-size: 1.1em;
+      		padding: 12px 18px 10px;
+      		font-weight: 300;
+      }
+
+      .flexslider li .category span {
+      		background: #e43837;
+      		margin-top: 17px;
+      		padding: 8px 12px 0;
+      		font-size: 0.9em;
+      		font-weight: 300;
+      		height: 26px;
+      }
+
+      .flexslider li h1,
+      .flexslider li h2,
+      .flexslider li .category p,
+      .flexslider li .category span {
+      		-webkit-animation-duration: .6s;
+      		animation-duration: .6s;
+      		-webkit-animation-fill-mode: both;
+      		animation-fill-mode: both;
+      		-webkit-animation-name: fadeOutLeft;
+      		animation-name: fadeOutLeft;
+      }
+
+      .flexslider li.flex-active-slide .meta h1,
+      .flexslider li.flex-active-slide .meta h2,
+      .flexslider li.flex-active-slide .meta .category p,
+      .flexslider li.flex-active-slide .meta .category span {
+      		-webkit-animation-delay: .4s;
+      		animation-delay: .4s;
+      		-webkit-animation-duration: .6s;
+      		animation-duration: .6s;
+      		-webkit-animation-fill-mode: both;
+      		animation-fill-mode: both;
+      		-webkit-animation-name: fadeInLeft;
+      		animation-name: fadeInLeft;
+      }
+
+      .flexslider li.flex-active-slide .meta h2 {
+      		-webkit-animation-delay: .5s;
+      		animation-delay: .5s;
+      }
+
+      .flexslider li.flex-active-slide .meta .category p {
+      		-webkit-animation-delay: .6s;
+      		animation-delay: .6s;
+      }
+
+      .flexslider li.flex-active-slide .meta .category span {
+      		-webkit-animation-delay: .8s;
+      		animation-delay: .8s;
+      }
+
+      .flex-direction-nav {
+      		position: absolute;
+      		top: 0;
+      		left: 30px;
+      }
+
+      .flex-direction-nav a {
+      		text-decoration: none;
+      		display: block;
+      		width: 30px;
+      		height: 30px;
+      		background-color: #333;
+      		margin: -20px 0 0;
+      		position: absolute;
+      		top: 50px;
+      		z-index: 10;
+      		overflow: hidden;
+      		opacity: .5;
+      		cursor: pointer;
+      		color: #fff;
+      		-webkit-transition: all .3s ease;
+      		-moz-transition: all .3s ease;
+      		transition: all .3s ease;
+      }
+
+      .flex-direction-nav .flex-prev {
+      		text-align: left;
+      		left: -10px;
+      }
+
+      .flex-direction-nav .flex-next {
+      		text-align: right;
+      		left: 30px;
+      }
+
+      .flexslider:hover .flex-prev {
+      		left: -10px;
+      }
+
+      .flexslider:hover .flex-next {
+      		left: 30px;
+      }
+
+      .flexslider:hover .flex-next:hover,
+      .flexslider:hover .flex-prev:hover {
+      		opacity: 1;
+      }
+
+      .flex-direction-nav a:before {
+      		font-family: FontAwesome;
+      		content: '\f104';
+      		font-size: 25px;
+      		display: flex;
+      		justify-content: center;
+      		align-items: center;
+      		position: relative;
+      		top: 0;
+      		padding: 2px;
+      		font-size: 19px;
+          line-height: 27px;
+      }
+
+      .flex-direction-nav a.flex-next:before {
+      		content: '\f105';
+      }
+
+      @-webkit-keyframes fadeInLeft {
+      		0% {
+      				opacity: 0;
+      				-webkit-transform: translate3d(-100%, 0, 0);
+      				transform: translate3d(-100%, 0, 0);
+      		}
+      		100% {
+      				opacity: 1;
+      				-webkit-transform: none;
+      				transform: none;
+      		}
+      }
+
+      @keyframes fadeInLeft {
+      		0% {
+      				opacity: 0;
+      				-webkit-transform: translate3d(-100%, 0, 0);
+      				transform: translate3d(-100%, 0, 0);
+      		}
+      		100% {
+      				opacity: 1;
+      				-webkit-transform: none;
+      				transform: none;
+      		}
+      }
+
+      @-webkit-keyframes fadeOutLeft {
+      		0% {
+      				opacity: 1;
+      		}
+      		100% {
+      				opacity: 0;
+      				-webkit-transform: translate3d(-100%, 0, 0);
+      				transform: translate3d(-100%, 0, 0);
+      		}
+      }
+
+      @keyframes fadeOutLeft {
+      		0% {
+      				opacity: 1;
+      		}
+      		100% {
+      				opacity: 0;
+      				-webkit-transform: translate3d(-100%, 0, 0);
+      				transform: translate3d(-100%, 0, 0);
+      		}
+      }
+    </style>
   </head>
   <body>
+    <!-- GRADIANT EFFECT ON TOP -->
+    <h1 id="main-heading" class="gradiant-effect"></h1>
+    <!-- MAIN DIVIDER WHICH CONTAINS ALL THE OTHER CATEGORY-->
+    <div id="main-box">
+      <!-- ABOUT ME SECTION -->
+      <div class="d-flex justify-content-center" id="about-me">
+        <div class="d-flex">
+          <div class="flex-shrink-0">
+            <!-- IMAGE OF THE PERSON-->
+            <img
+              class="gradiant-effect"
+              src="https://avatars.githubusercontent.com/u/38612112?v=4"
+              alt="image"
+            />
+          </div>
+          <div class="flex-grow-1 ms-5 name-heading">
+            <h1>Jose Angel Prieto</h1>
+            <!-- ABOUT HIM -->
+            <p class="gray-text">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and <b class="hue-bold">scrambled</b> it to make a type
+              specimen book. It has survived not only five centuries, but also
+              the leap into electronic typesetting, remaining essentially
+              unchanged. It was popularised in the 1960s with the release of
+              Letraset sheets containing Lorem Ipsum passages, and more recently
+              with desktop publishing software like Aldus PageMaker including
+              versions of Lorem Ipsum.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="gradiant-effect" id="second-heading">SKILLS</h1>
+      <br />
+      <!-- SKILLS OR TECH HE KNOWS -->
+      <div
+        class="d-flex justify-content-center align-content-between flex-wrap"
+        id="skills"
+      >
+        <i
+          class="fab fa-react skills-icon"
+          data-tippy-content="React Native"
+        ></i>
+        <i class="fab fa-vuejs skills-icon" data-tippy-content="Vuejs"></i>
+        <i class="fab fa-node skills-icon" data-tippy-content="Node.js"></i>
+        <i class="fab fa-html5 skills-icon" data-tippy-content="HTML"></i>
+        <i
+          class="fab fa-js-square skills-icon"
+          data-tippy-content="JavaScript"
+        ></i>
+      </div>
+
+      <div
+        class="container-xxl gradiant-effect"
+        style=" max-width: 1034px;"
+        id="third-heading"
+      >
+        <h1>PROJECTS</h1>
+      </div>
+
+      <!-- PROJECT THAT HE OWNS -->
+      <div class="container-xxl" style="max-width: 1034px;" id="projects">
+        <div class="flexslider left">
+          <ul class="slides">
+            <li>
+              <img src="https://source.unsplash.com/BaCmEa2hy8g/1600x900" />
+              <div class="meta">
+                <h1>Lorem ipsum dolor sit amet, consectetur.</h1>
+                <h2>Lorem ipsum dolor sit.</h2>
+                <div class="category">
+                  <p>$286600</p>
+                  <span>Category</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src="https://source.unsplash.com/RmZIUIF2S2Q/1600x900" />
+              <div class="meta">
+                <h1>Lorem ipsum dolor sit amet, consectetur.</h1>
+                <h2>Lorem ipsum dolor sit.</h2>
+                <div class="category">
+                  <p>$415000</p>
+                  <span>Category</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src="https://source.unsplash.com/cFplR9ZGnAk/1600x900" />
+              <div class="meta">
+                <h1>Lorem ipsum dolor sit amet, consectetur.</h1>
+                <h2>Lorem ipsum dolor sit.</h2>
+                <div class="category">
+                  <p>$415000</p>
+                  <span>Category</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src="https://source.unsplash.com/Ui8KQ0ahXBM/1600x900" />
+              <div class="meta">
+                <h1>Lorem ipsum dolor sit amet, consectetur.</h1>
+                <h2>Lorem ipsum dolor sit.</h2>
+                <div class="category">
+                  <p>$415000</p>
+                  <span>Category</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="container-xxl gradiant-effect"
+        style=" max-width: 1034px;"
+        id="fourth-heading"
+      >
+        <h1>CONTACT ME</h1>
+      </div>
+    </div>
+
     <h1>Awesome!</h1>
     <p>For U from Github Pages.</p>
     <div id="skills" class="progress-skills">
@@ -307,6 +668,23 @@
         </g>
       </svg>
     </div>
+    <br />
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+    <script>
+      tippy("[data-tippy-content]", {
+        arrow: false,
+        inertia: true,
+        animation: "scale",
+        theme: "gradiant",
+        placement: "bottom",
+      });
+      $(".flexslider").flexslider({
+        animation: "slide",
+        controlNav: false,
+      });
+    </script>
     <script>
       window.addEventListener("DOMContentLoaded", () => {
         const skills = new ProgressSkills("#skills");
