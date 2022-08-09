@@ -1,211 +1,139 @@
-@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
-
-body,
-html {
-    background-color: #111111;
-    color: white;
-    height: 100%; 
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --hue: 223;
+    --bg: hsl(var(--hue),10%,90%);
+    --fg: hsl(var(--hue),10%,10%);
+    font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+body, button {
+    color: var(--fg);
+    font: 1em/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+body {
+    background-color: var(--bg);
+    height: 100vh;
+    display: grid;
+    place-items: center;
 }
 
-/* HEADINGS */ 
-#main-heading {
-    border-top: solid;
-}
-
-#about-me h1 {
-    font-family: 'Hammersmith One', sans-serif;
-}
-
-#second-heading {
-    font-family: monospace;
-    font-size: 25px;
-    display: flex;
-    width: 25%;
+.progress-skills {
+    display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: center;
+    position: relative;
     text-align: center;
-    margin: 0 auto;
+    width: 20em;
+    height: 20em;
+    transform: rotate(270deg);
+    padding: 3rem;
 }
-
-#second-heading:before,
-#second-heading:after {
-    content: '';
-    border-top: 2px solid;
-    margin: 0 20px 0 0;
-    flex: 1 0 20px;
+.progress-skill__time-date,
+.progress-skill__time-digit,
+.progress-skill__time-colon,
+.progress-skill__time-ampm {
+    transition: color 0.2s linear;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
+.progress-skill__time-date,
+.progress-skill__time-digit {
+    background: transparent;
+    transform: rotate(90deg)
 
-#second-heading:after {
-    margin: 0 0 0 20px;
 }
-
-#third-heading h1 {
-    max-width: 1034px;
-    display: flex;
-    font-size: 25px;
-    font-family: monospace;
+.progress-skill__time-date,
+.progress-skill__time-ampm {
+    grid-column: 1 / 6;
+}
+.progress-skill__time-date {
+    line-height: 0.75;
+    transform: rotate(90deg)
+}
+.progress-skill__time-digit,
+.progress-skill__time-colon {
+    font-size: 0.75em;
+    font-weight: 400;
+    grid-row: 2;
+}
+.progress-skill__time-colon {
+    line-height: 1.275;
+}
+.progress-skill__time-ampm {
+    cursor: default;
+    grid-row: 3;
+}
+.progress-skill__rings {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin-top: 30px
+    height: 100%;
+    z-index: -1;
+}
+.progress-skill__ring {
+    opacity: 0.1;
+}
+.progress-skill__ring-fill {
+    transition:
+        opacity 0s 0.3s linear,
+        stroke-dashoffset 0.3s ease-in-out;
+}
+.progress-skill__ring-fill--360 {
+    opacity: 0;
+    stroke-dashoffset: 0;
+    transition-duration: 0.3s;
+}
+[data-group]:focus {
+    outline: transparent;
+}
+[data-units] {
+    transition: opacity 0.2s linear;
+}
+[data-group="d"]:focus,
+[data-group="d"]:hover {
+    color: hsl(13,90%,55%);
+}
+[data-group="h"]:focus,
+[data-group="h"]:hover {
+    color: hsl(33,90%,55%);
+}
+[data-group="m"]:focus,
+[data-group="m"]:hover {
+    color: hsl(213,90%,55%);
+}
+[data-group="s"]:focus,
+[data-group="s"]:hover {
+    color: hsl(273,90%,55%);
+}
+[data-group]:focus ~ .progress-skill__rings [data-units],
+[data-group]:hover ~ .progress-skill__rings [data-units] {
+    opacity: 0.2;
+}
+[data-group="d"]:focus ~ .progress-skill__rings [data-units="d"],
+[data-group="d"]:hover ~ .progress-skill__rings [data-units="d"],
+[data-group="h"]:focus ~ .progress-skill__rings [data-units="h"],
+[data-group="h"]:hover ~ .progress-skill__rings [data-units="h"],
+[data-group="m"]:focus ~ .progress-skill__rings [data-units="m"],
+[data-group="m"]:hover ~ .progress-skill__rings [data-units="m"],
+[data-group="s"]:focus ~ .progress-skill__rings [data-units="s"],
+[data-group="s"]:hover ~ .progress-skill__rings [data-units="s"] {
+    opacity: 1;
 }
 
-
-#third-heading h1:after {
-    content: '';
-    border-top: 2px solid;
-    margin: 0 20px 0 0;
-    flex: 1 0 20px;
-}
-
-#third-heading h1:after {
-    margin: 15px 0 0 10px;
-}
-
-#fourth-heading h1 {
-    max-width: 1034px;
-    display: flex;
-    font-size: 25px;
-    font-family: monospace;
-    width: 100%;
-    margin-top: 30px
-}
-
-
-#fourth-heading h1:before {
-    content: '';
-    border-top: 2px solid;
-    margin: 0 20px 0 0;
-    flex: 1 0 20px;
-}
-
-#fourth-heading h1:before {
-    margin: 15px 10px 0 0;
-}
-
-/* ---------------------------------- */
-
-/* EFFECTS */
-
-.gray-text {
-    color: gray;
-}
-
-.gradiant-effect {
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 6rem;
-    font-weight: 100;
-    letter-spacing: 2px;
-    text-align: center;
-    color: #f35626;
-    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: hue 10s infinite linear;
-}
-
-.hue-bold {
-    color: #f35626;
-    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: hue 10s infinite linear;
-}
-
-/*---------------------------------------------------------*/
-
-/* OTHER */
-
-#main-box {
-    margin: 0 auto;
-    width: 90%;
-    padding-top: 20px;
-}
-
-#about-me .name-heading {
-    max-width: 50rem;
-}
-
-#about-me div div img {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 5rem;
-    border: 3px solid;
-}
-
-.skills-icon {
-    font-size: 3rem;
-    color: gray;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    transition: all .3s;
-}
-
-.skills-icon:hover {
-    transform: scale(1.1);
-    color: #02aab0;
-    background-image: -webkit-linear-gradient(92deg, #02aab0, #00cdac);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: hue 10s infinite linear;
-}
-
-  
-.tippy-box[data-theme~='gradiant'] {
-    color: white;
-    background-color: transparent;
-    opacity: 0.7;
-}
-
-.card {
-    border-radius: 5px;
-    background-color: #181818;
-}
-
-.card-text {
-    color: gray;
-}
-
-/* -------------------------- */
-
-
-/* CONTACT ME */
-
-
-#contact-me textarea,
-#contact-me input {
-    background-color: #181818;
-    outline: none;
-    border: none;
-    color: gray;
-}
-
-#contact-me textarea {
-    background: #181818;
-}
-
-
-#contact-me button {
-    font-family: 'Hammersmith One', sans-serif;
-    color: #f35626;
-    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
-    -webkit-animation: hue 10s infinite linear;
-    outline: none;
-    border: none;
-}
-
-/* -------------------------- */
-
-
-/* ANIMATION */
-
-
-@-webkit-keyframes hue {
-    from {
-        -webkit-filter: hue-rotate(0deg);
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: hsl(var(--hue),10%,10%);
+        --fg: hsl(var(--hue),10%,90%);
     }
-
-    to {
-        -webkit-filter: hue-rotate(-360deg);
+    .progress-skill__ring {
+        opacity: 0.2;
     }
 }
-
-/* --------------- */
