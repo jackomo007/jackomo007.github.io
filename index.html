@@ -24,23 +24,17 @@
       href="https://unpkg.com/tippy.js@6/animations/scale.css"
     />
     <style>
-                /* * {
+        .root-skills {
       	border: 0;
       	box-sizing: border-box;
       	margin: 0;
       	padding: 0;
-      }
-      :root {
       	--hue: 223;
       	--bg: hsl(var(--hue),10%,90%);
       	--fg: hsl(var(--hue),10%,10%);
       	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
       }
-      body, button {
-      	color: var(--fg);
-      	font: 1em/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      }
-      body {
+      .container-skills {
       	background-color: var(--bg);
       	height: 100vh;
       	display: grid;
@@ -163,8 +157,6 @@
       		opacity: 0.2;
       	}
       }
-    </style>
-    <style>
             .flexslider {
       		width: 790px;
       		margin: 0 auto;
@@ -445,7 +437,7 @@
       </div>
 
       <!-- PROJECT THAT HE OWNS -->
-      <div class="container-xxl" style="max-width: 1034px;" id="projects">
+      <div>
         <div class="flexslider left">
           <ul class="slides">
             <li>
@@ -507,167 +499,176 @@
 
     <h1>Awesome!</h1>
     <p>For U from Github Pages.</p>
-    <div id="skills" class="progress-skills">
-      <button class="progress-skill__time-date" data-group="d" type="button">
-        <small data-unit="w">Sunday</small><br />
-        <span data-unit="mo">January</span>
-        <span data-unit="d">1</span>
-      </button>
-      <button
-        class="progress-skill__time-digit"
-        data-unit="h"
-        data-group="h"
-        type="button"
-      ></button
-      ><span class="progress-skill__time-colon"></span
-      ><button
-        class="progress-skill__time-digit"
-        data-unit="m"
-        data-group="m"
-        type="button"
-      ></button
-      ><span class="progress-skill__time-colon"></span
-      ><button
-        class="progress-skill__time-digit"
-        data-unit="s"
-        data-group="s"
-        type="button"
-      ></button>
-      <span class="progress-skill__time-ampm" data-unit="ap">AM</span>
-      <svg
-        class="progress-skill__rings"
-        width="256"
-        height="256"
-        viewBox="0 0 256 256"
-      >
-        <defs>
-          <linearGradient id="pc-red" x1="1" y1="0.5" x2="0" y2="0.5">
-            <stop offset="0%" stop-color="hsl(13,90%,78%)" />
-            <stop offset="100%" stop-color="hsl(13,90%,55%)" />
-          </linearGradient>
-          <linearGradient id="pc-yellow" x1="1" y1="0.5" x2="0" y2="0.5">
-            <stop offset="0%" stop-color="hsl(43,90%,75%)" />
-            <stop offset="100%" stop-color="hsl(23,90%,55%)" />
-          </linearGradient>
-          <linearGradient id="pc-blue" x1="1" y1="0.5" x2="0" y2="0.5">
-            <stop offset="0%" stop-color="hsl(223,90%,55%)" />
-            <stop offset="100%" stop-color="hsl(203,90%,55%)" />
-          </linearGradient>
-          <linearGradient id="pc-purple" x1="1" y1="0.5" x2="0" y2="0.5">
-            <stop offset="0%" stop-color="hsl(283,90%,55%)" />
-            <stop offset="100%" stop-color="hsl(263,90%,55%)" />
-          </linearGradient>
-        </defs>
-        <!-- Days of Month -->
-        <g data-units="d">
-          <circle
-            class="progress-skill__ring"
-            cx="128"
-            cy="128"
-            r="74"
-            fill="none"
-            opacity="0.1"
-            stroke="url(#pc-red)"
-            stroke-width="12"
-          />
-          <circle
-            class="progress-skill__ring-fill"
-            data-ring="mo"
-            cx="128"
-            cy="128"
-            r="74"
-            fill="none"
-            stroke="url(#pc-red)"
-            stroke-width="12"
-            stroke-dasharray="465 465"
-            stroke-dashoffset="465"
-            stroke-linecap="round"
-            transform="rotate(-90,128,128)"
-          />
-        </g>
-        <!-- Hours of Day -->
-        <g data-units="h">
-          <circle
-            class="progress-skill__ring"
-            cx="128"
-            cy="128"
-            r="90"
-            fill="none"
-            opacity="0.1"
-            stroke="url(#pc-yellow)"
-            stroke-width="12"
-          />
-          <circle
-            class="progress-skill__ring-fill"
-            data-ring="d"
-            cx="128"
-            cy="128"
-            r="90"
-            fill="none"
-            stroke="url(#pc-yellow)"
-            stroke-width="12"
-            stroke-dasharray="565.5 565.5"
-            stroke-dashoffset="565.5"
-            stroke-linecap="round"
-            transform="rotate(-90,128,128)"
-          />
-        </g>
-        <!-- Minutes of Hour -->
-        <g data-units="m">
-          <circle
-            class="progress-skill__ring"
-            cx="128"
-            cy="128"
-            r="106"
-            fill="none"
-            opacity="0.1"
-            stroke="url(#pc-blue)"
-            stroke-width="12"
-          />
-          <circle
-            class="progress-skill__ring-fill"
-            data-ring="h"
-            cx="128"
-            cy="128"
-            r="106"
-            fill="none"
-            stroke="url(#pc-blue)"
-            stroke-width="12"
-            stroke-dasharray="666 666"
-            stroke-dashoffset="666"
-            stroke-linecap="round"
-            transform="rotate(-90,128,128)"
-          />
-        </g>
-        <!-- Seconds of Minute -->
-        <g data-units="s">
-          <circle
-            class="progress-skill__ring"
-            cx="128"
-            cy="128"
-            r="122"
-            fill="none"
-            opacity="0.1"
-            stroke="url(#pc-purple)"
-            stroke-width="12"
-          />
-          <circle
-            class="progress-skill__ring-fill"
-            data-ring="m"
-            cx="128"
-            cy="128"
-            r="122"
-            fill="none"
-            stroke="url(#pc-purple)"
-            stroke-width="12"
-            stroke-dasharray="766.5 766.5"
-            stroke-dashoffset="766.5"
-            stroke-linecap="round"
-            transform="rotate(-90,128,128)"
-          />
-        </g>
-      </svg>
+    <div class="root-skills">
+      <div class="container-skills">
+        <div id="skills" class="progress-skills">
+          <button
+            class="progress-skill__time-date"
+            data-group="d"
+            type="button"
+          >
+            <small data-unit="w">Sunday</small><br />
+            <span data-unit="mo">January</span>
+            <span data-unit="d">1</span>
+          </button>
+          <button
+            class="progress-skill__time-digit"
+            data-unit="h"
+            data-group="h"
+            type="button"
+          ></button
+          ><span class="progress-skill__time-colon"></span
+          ><button
+            class="progress-skill__time-digit"
+            data-unit="m"
+            data-group="m"
+            type="button"
+          ></button
+          ><span class="progress-skill__time-colon"></span
+          ><button
+            class="progress-skill__time-digit"
+            data-unit="s"
+            data-group="s"
+            type="button"
+          ></button>
+          <span class="progress-skill__time-ampm" data-unit="ap">AM</span>
+          <svg
+            class="progress-skill__rings"
+            width="256"
+            height="256"
+            viewBox="0 0 256 256"
+          >
+            <defs>
+              <linearGradient id="pc-red" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stop-color="hsl(13,90%,78%)" />
+                <stop offset="100%" stop-color="hsl(13,90%,55%)" />
+              </linearGradient>
+              <linearGradient id="pc-yellow" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stop-color="hsl(43,90%,75%)" />
+                <stop offset="100%" stop-color="hsl(23,90%,55%)" />
+              </linearGradient>
+              <linearGradient id="pc-blue" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stop-color="hsl(223,90%,55%)" />
+                <stop offset="100%" stop-color="hsl(203,90%,55%)" />
+              </linearGradient>
+              <linearGradient id="pc-purple" x1="1" y1="0.5" x2="0" y2="0.5">
+                <stop offset="0%" stop-color="hsl(283,90%,55%)" />
+                <stop offset="100%" stop-color="hsl(263,90%,55%)" />
+              </linearGradient>
+            </defs>
+            <!-- Days of Month -->
+            <g data-units="d">
+              <circle
+                class="progress-skill__ring"
+                cx="128"
+                cy="128"
+                r="74"
+                fill="none"
+                opacity="0.1"
+                stroke="url(#pc-red)"
+                stroke-width="12"
+              />
+              <circle
+                class="progress-skill__ring-fill"
+                data-ring="mo"
+                cx="128"
+                cy="128"
+                r="74"
+                fill="none"
+                stroke="url(#pc-red)"
+                stroke-width="12"
+                stroke-dasharray="465 465"
+                stroke-dashoffset="465"
+                stroke-linecap="round"
+                transform="rotate(-90,128,128)"
+              />
+            </g>
+            <!-- Hours of Day -->
+            <g data-units="h">
+              <circle
+                class="progress-skill__ring"
+                cx="128"
+                cy="128"
+                r="90"
+                fill="none"
+                opacity="0.1"
+                stroke="url(#pc-yellow)"
+                stroke-width="12"
+              />
+              <circle
+                class="progress-skill__ring-fill"
+                data-ring="d"
+                cx="128"
+                cy="128"
+                r="90"
+                fill="none"
+                stroke="url(#pc-yellow)"
+                stroke-width="12"
+                stroke-dasharray="565.5 565.5"
+                stroke-dashoffset="565.5"
+                stroke-linecap="round"
+                transform="rotate(-90,128,128)"
+              />
+            </g>
+            <!-- Minutes of Hour -->
+            <g data-units="m">
+              <circle
+                class="progress-skill__ring"
+                cx="128"
+                cy="128"
+                r="106"
+                fill="none"
+                opacity="0.1"
+                stroke="url(#pc-blue)"
+                stroke-width="12"
+              />
+              <circle
+                class="progress-skill__ring-fill"
+                data-ring="h"
+                cx="128"
+                cy="128"
+                r="106"
+                fill="none"
+                stroke="url(#pc-blue)"
+                stroke-width="12"
+                stroke-dasharray="666 666"
+                stroke-dashoffset="666"
+                stroke-linecap="round"
+                transform="rotate(-90,128,128)"
+              />
+            </g>
+            <!-- Seconds of Minute -->
+            <g data-units="s">
+              <circle
+                class="progress-skill__ring"
+                cx="128"
+                cy="128"
+                r="122"
+                fill="none"
+                opacity="0.1"
+                stroke="url(#pc-purple)"
+                stroke-width="12"
+              />
+              <circle
+                class="progress-skill__ring-fill"
+                data-ring="m"
+                cx="128"
+                cy="128"
+                r="122"
+                fill="none"
+                stroke="url(#pc-purple)"
+                stroke-width="12"
+                stroke-dasharray="766.5 766.5"
+                stroke-dashoffset="766.5"
+                stroke-linecap="round"
+                transform="rotate(-90,128,128)"
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
+
     <br />
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
