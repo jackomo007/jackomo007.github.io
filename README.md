@@ -1,2 +1,3 @@
 # jackomo007.github.io
-Personal page hosted in github
+Personal Resume Page
+https://jackomo007.github.io
