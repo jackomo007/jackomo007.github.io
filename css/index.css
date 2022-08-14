@@ -212,6 +212,23 @@ html {
   transform: rotate(270deg);
   padding: 3rem;
 }
+
+@media screen and (max-width: 540px) {
+  .container {
+    height: 75vh;
+    margin-bottom: 50px;
+  }
+
+  .progress-skills {
+    width: 21em;
+  }
+
+  .button {
+    font-size: 3vw;
+    margin-bottom: 17px;
+  }
+}
+
 .progress-skill__time-date,
 .progress-skill__time-digit,
 .progress-skill__time-colon,
