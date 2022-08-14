@@ -196,6 +196,7 @@ html {
 .container {
     background-color:  hsl(223,10%,10%);
     width: 40vw;
+    min-width: fit-content;
     height: 60vh;
     display: grid;
     place-items: center;
